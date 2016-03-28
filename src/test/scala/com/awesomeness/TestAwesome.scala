@@ -1,14 +1,13 @@
 package com.awesomeness
 
-import org.scalatest.junit.JUnitSuite
-import junit.framework.Assert._
-import org.junit.Test
+import org.scalatest._
 
-class TestAwesome extends JUnitSuite {
+class TestAwesome extends FunSpec with Matchers {
  val awesome = new Awesomeness
 
- @ Test def awesomeExample {
-    assertEquals(1, awesome square 1)
-    assertEquals(6, awesome multiple (2,3))
+ it("sample test") {
+    awesome.square(1) should be (1)
+    // awesome.multiple(2,3) should be (6)
+    Thread.sleep(1000)
   }
 }
